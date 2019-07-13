@@ -1,0 +1,27 @@
+{
+  "description": "Bookmark the youtube video you are watching at its current timestamp.",
+  "manifest_version": 2,
+  "name": "YouTube Timestamp Bookmarker",
+  "version": "1.0",
+  "homepage_url": "https://github.com/tonedblue/youtubetimestampbookmarker",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+  "permissions": [
+    "activeTab",
+    "bookmarks",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon-32.png",
+    "theme_icons": [
+      {
+        "dark": "icons/icon-32.png",
+        "light": "icons/icon-32.png",
+        "size": 32
+      }
+    ],
+    "default_title": "YouTube Timestamp Bookmarker",
+    "default_popup": "popup/save_bookmark.html"
+  }
+}
