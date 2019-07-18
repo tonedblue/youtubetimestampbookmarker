@@ -1,4 +1,4 @@
-select, input{
+select, input[type=text] {
     display: block;
 	width:100%;
 	margin-bottom:15px;

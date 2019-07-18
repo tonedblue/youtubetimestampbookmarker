@@ -58,6 +58,10 @@ function formPost(e) {
  */
 function saveBookmark(result) {
   tabUrl.searchParams.set("t", Math.floor(result[0]));
+  if (document.getElementById("trimPlayList").checked) {
+    tabUrl.searchParams.delete("list");
+    tabUrl.searchParams.delete("index");
+  }
   var url = tabUrl.href;
   var name = document.querySelector("#name").value;
   var folder = document.querySelector("#folder").value;
