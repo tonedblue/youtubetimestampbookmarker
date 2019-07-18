@@ -92,11 +92,11 @@ function addOption(bookmarkItem) {
     var select = document.querySelector("#folder");
     var opt = document.createElement("option");
     opt.value = bookmarkItem.id;
-    opt.text = bookmarkItem.title
+    opt.text = bookmarkItem.title;
     select.add(opt, null);
   }
   if (bookmarkItem.children) {
-    for (child of bookmarkItem.children) {
+    for (let child of bookmarkItem.children) {
       addOption(child);
     }
   }
