@@ -57,7 +57,12 @@ function formPost(e) {
  * Saves bookmark
  */
 function saveBookmark(result) {
-  var url = tabUrl.href + '&t=' + Math.floor(result[0]);
+  tabUrl.searchParams.set("t", Math.floor(result[0]));
+  if (document.getElementById("trimPlayList").checked) {
+    tabUrl.searchParams.delete("list");
+    tabUrl.searchParams.delete("index");
+  }
+  var url = tabUrl.href;
   var name = document.querySelector("#name").value;
   var folder = document.querySelector("#folder").value;
   console.log("saving bookmark url: " + url + " name: " + name + " folder: " + folder);
@@ -87,11 +92,11 @@ function addOption(bookmarkItem) {
     var select = document.querySelector("#folder");
     var opt = document.createElement("option");
     opt.value = bookmarkItem.id;
-    opt.text = bookmarkItem.title
+    opt.text = bookmarkItem.title;
     select.add(opt, null);
   }
   if (bookmarkItem.children) {
-    for (child of bookmarkItem.children) {
+    for (let child of bookmarkItem.children) {
       addOption(child);
     }
   }
